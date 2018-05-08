@@ -13,4 +13,4 @@ i) There is no Outlier
 
 ii) There is a Outlier or many Outliers
 
-![Alt text](H:\[4] 3. Progress\(18.05.08) Outlier_Detection(60).png)
+![Alt text](H:/[4] 3. Progress/(18.05.08) Outlier_Detection(60).png)

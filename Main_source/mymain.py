@@ -8,7 +8,7 @@ import pandas as pd
 import time
 import csv
 
-# API Key & Secret number
+# API Key & Secret number / dolidoli92 API
 my_binance = Client('NArFy5c2NYFW53j2PRprY0Di5yD7txbC5uqXNfS1EBMAlx0wBt0pmgmTS2YHelsD',
                     '3SkFX4pRDMjxml9YDWUuILLDZe9BlAzfpbfl4zbGgt7HgB6VHG9rRcEMW1Nr4S4U',
                     {"verify": True, "timeout": 20})
@@ -119,7 +119,7 @@ all_currencies_TRADING_count = currencies_btc_market_TRDING_count + \
                                 currencies_bnb_market_TRDING_count + \
                                 currencies_usdt_market_TRDING_count
 
-print ("Binance   가능 종목 갯수  : ",all_currencies_TRADING_count)
+print ("Binance총 가능 종목 갯수  : ",all_currencies_TRADING_count)
 print ("BTC  거래 가능 종목 갯수  : ",currencies_btc_market_TRDING_count)
 print ("ETH  거래 가능 종목 갯수  : ",currencies_eth_market_TRDING_count)
 print ("BNB  거래 가능 종목 갯수  : ",currencies_bnb_market_TRDING_count)
@@ -148,7 +148,6 @@ get_exchange_info_data = my_binance.get_exchange_info()['symbols']
 currencies_LOT_SIZE_dict = {}
 currencies_PRICE_FILTER_dict = {}
 
-# BTC 거래 가능한 데이터 긁어오기
 print ("LOT_SIZE, PRICE_FILTER 데이터를 받습니다.\n")
 for i in range(0, all_currencies_TRADING_count):
     currencies_LOT_SIZE_dict[get_exchange_info_data[i]['symbol']] = \
@@ -171,7 +170,7 @@ print ("--------------------------------------------------------")
 
 # 최근 7*1시간 기준 시간봉(close) 데이터 만들기( Dictionary of list )
 # step2. Load data for algorithm
-print ("최근 7*1시간 시간봉 데이터를 로드하고 있습니다.")
+print ("최근 7*1시간 시간봉 데이터를 로드하고 있습니다. 약 15초의 시간이 소요됩니다.")
 
 hour7_last_data = {}
 for i in range(0, currencies_btc_market_TRDING_count):
@@ -188,7 +187,7 @@ for i in range(0, currencies_btc_market_TRDING_count):
             except IndexError as e:
                 print (e, ",PART2. step1 오류 발생") # 발생하지 않아야 함
 
-print ("최근 7*1시간 시간봉 데이터를 로드를 완료했습니다.")
+print ("최근 7*1시간 시간봉 데이터를 로드를 완료했습니다. 약 10초의 시간이 소요됩니다.")
 
 # 최근 7*15분 기준 15분봉(close) 데이터 만들기( Dictionary of list )
 print ("최근 7*15분 15분봉 데이터를 로드하고 있습니다.")
@@ -209,19 +208,13 @@ for i in range(0, currencies_btc_market_TRDING_count):
 
 
 print ("최근 7*15분 15분봉 데이터를 로드를 완료했습니다.\n")
+print ("--------------------------------------------------------")
 
 now_second = -1
 fish_list_hour1 = {}
 fish_list_min15 = {}
 buy_order_list = []
 sell_order_list = []
-
-
-
-
-
-
-
 
 #################################################################################################
 #                              Part3. 지속적인 알고리즘 반복 수행                                  #
@@ -244,14 +237,15 @@ while True:
         try:
             ticker_data = my_binance.get_all_tickers()  # 1 request
 
-            if len(ticker_data) == all_currencies_TRADING_count:
-                for i in range(0, all_currencies_TRADING_count):
+            # all_currencies_count
+            # all_currencies_TRADING_count
+            if len(ticker_data) == all_currencies_count:
+                for i in range(0, all_currencies_count):
                     try:
                         if ticker_data[i]['symbol'][-3:] == 'BTC':
                             hour7_last_data[ticker_data[i]['symbol']][6] = float(ticker_data[i]['price'])
-                            min15_last_data[ticker_data[i]['symbol']][6] = float(ticker_data[i]['price'])
                     except KeyError as e:
-                        print(e, ",get_all_ticker() error")
+                        print(e, "is current frozen, get_all_ticker() function error")
             else:
                 # 간혹가다가 get_ticker()에서 모든 데이터를 긁어오지 못하는 경우가 존재
                 print("get ticker error, error length", len(ticker_data))
@@ -265,23 +259,23 @@ while True:
         hour7_last_data = {}
         min15_last_data = {}
         for i in range(0, currencies_btc_market_TRDING_count):
-            tmp_hour1_data = my_binance.get_klines(symbol=currencies_btc_market_TRDING_count[i],
+            tmp_hour1_data = my_binance.get_klines(symbol=currencies_btc_market_TRDING[i],
                                                    interval=my_binance.KLINE_INTERVAL_1HOUR,
                                                    limit=7)
             for j in range(0, 7):
                 if j == 0:
-                    hour7_last_data[currencies_btc_market_TRDING_count[i]] = [float(tmp_hour1_data[j][4])]  # 'Close' data
+                    hour7_last_data[currencies_btc_market_TRDING[i]] = [float(tmp_hour1_data[j][4])]  # 'Close' data
                 else:
-                    hour7_last_data[currencies_btc_market_TRDING_count[i]].append(float(tmp_hour1_data[j][4]))
+                    hour7_last_data[currencies_btc_market_TRDING[i]].append(float(tmp_hour1_data[j][4]))
 
-            tmp_min15_data = my_binance.get_klines(symbol=currencies_btc_market_TRDING_count[i],
+            tmp_min15_data = my_binance.get_klines(symbol=currencies_btc_market_TRDING[i],
                                                    interval=my_binance.KLINE_INTERVAL_15MINUTE,
                                                    limit=7)
             for jj in range(0, 7):
                 if jj == 0:
-                    min15_last_data[currencies_btc_market_TRDING_count[i]] = [float(tmp_min15_data[jj][4])]  # 'Close' data
+                    min15_last_data[currencies_btc_market_TRDING[i]] = [float(tmp_min15_data[jj][4])]  # 'Close' data
                 else:
-                    min15_last_data[currencies_btc_market_TRDING_count[i]].append(float(tmp_min15_data[jj][4]))
+                    min15_last_data[currencies_btc_market_TRDING[i]].append(float(tmp_min15_data[jj][4]))
 
 
 

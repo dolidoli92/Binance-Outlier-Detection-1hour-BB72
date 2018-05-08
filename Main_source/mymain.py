@@ -187,10 +187,10 @@ for i in range(0, currencies_btc_market_TRDING_count):
             except IndexError as e:
                 print (e, ",PART2. step1 오류 발생") # 발생하지 않아야 함
 
-print ("최근 7*1시간 시간봉 데이터를 로드를 완료했습니다. 약 10초의 시간이 소요됩니다.")
+print ("최근 7*1시간 시간봉 데이터를 로드를 완료했습니다.")
 
 # 최근 7*15분 기준 15분봉(close) 데이터 만들기( Dictionary of list )
-print ("최근 7*15분 15분봉 데이터를 로드하고 있습니다.")
+print ("최근 7*15분 15분봉 데이터를 로드하고 있습니다. 약 10초의 시간이 소요됩니다.")
 
 min15_last_data = {}
 for i in range(0, currencies_btc_market_TRDING_count):
@@ -247,8 +247,9 @@ while True:
                     except KeyError as e:
                         print(e, "is current frozen, get_all_ticker() function error")
             else:
-                # 간혹가다가 get_ticker()에서 모든 데이터를 긁어오지 못하는 경우가 존재
-                print("get ticker error, error length", len(ticker_data))
+                # 간혹가다가 get_ticker()에서 모든 데이터를 긁어오지 못하는 경우가 존재-새로상장시
+                # print("get ticker error, error length", len(ticker_data))
+                pass
 
         except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectionError, exceptions.BinanceAPIException) as e:
             print("Part2 : Update the data ", e)

@@ -22,4 +22,4 @@ and contents are saved in .csv file
 ## 실행 사진
 ***
 
-![Alt text](/(18.05.08) Outlier_Detection(60).png)
+![Alt text](./(18.05.08) Outlier_Detection(60).png)

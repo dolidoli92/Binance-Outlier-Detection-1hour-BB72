@@ -245,11 +245,13 @@ while True:
                         if ticker_data[i]['symbol'][-3:] == 'BTC':
                             hour7_last_data[ticker_data[i]['symbol']][6] = float(ticker_data[i]['price'])
                     except KeyError as e:
-                        print(e, "is current frozen, get_all_ticker() function error")
+                        # 새로 상장했을 때, hour7_last_data에 그 종목이 존재하지 않아서 KeyError 발생
+                        # print(e, "is current frozen, get_all_ticker() function error")
+                        pass
             else:
-                # 간혹가다가 get_ticker()에서 모든 데이터를 긁어오지 못하는 경우가 존재-새로상장시
-                # print("get ticker error, error length", len(ticker_data))
-                pass
+                # 간혹가다가 get_ticker()에서 모든 데이터를 긁어오지 못하는 경우가 존재
+                print("get ticker error, error length", len(ticker_data))
+
 
         except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectionError, exceptions.BinanceAPIException) as e:
             print("Part2 : Update the data ", e)

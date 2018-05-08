@@ -16,5 +16,10 @@ ii) There is a Outlier or many Outliers
 
 시간: 2018-05-08 13:25:10 하한선가격: 0.00008551 현재가격: 0.00008545 평균이탈율: 2.5005 %
 
-
 and contents are saved in .csv file
+
+***
+## 실행 사진
+***
+
+![Alt text]((18.05.08) Outlier_Detection(60).png)

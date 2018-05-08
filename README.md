@@ -12,5 +12,6 @@ i) There is no Outlier
 1시간봉 평균이탈율: 2.5281 %
 
 ii) There is a Outlier or many Outliers
+1시간봉 이탈률: -0.067 % OAXBTC  매수 신호 발생. 시간: 2018-05-08 13:25:10 하한선가격: 0.00008551 현재가격: 0.00008545 평균이탈율: 2.5005 %
 
-![Alt text](H:/[4] 3. Progress/(18.05.08) Outlier_Detection(60).png)
+and contents are saved in .csv file

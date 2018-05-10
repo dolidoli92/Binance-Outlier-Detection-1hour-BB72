@@ -5,9 +5,9 @@ import exceptions
 import requests
 import csv
 
-# API Key & Secret number / dolidoli92 API
-my_binance = Client('NArFy5c2NYFW53j2PRprY0Di5yD7txbC5uqXNfS1EBMAlx0wBt0pmgmTS2YHelsD',
-                    '3SkFX4pRDMjxml9YDWUuILLDZe9BlAzfpbfl4zbGgt7HgB6VHG9rRcEMW1Nr4S4U',
+# API Key & Secret number
+my_binance = Client('API KEY',
+                    'API SECURE',
                     {"verify": True, "timeout": 20})
 
 
@@ -15,7 +15,7 @@ my_binance = Client('NArFy5c2NYFW53j2PRprY0Di5yD7txbC5uqXNfS1EBMAlx0wBt0pmgmTS2Y
 #          PART1. 프로그램 시작 준비(프로그램 설정/데이터 정리를 위해 기본데이터 수집)                 #
 #################################################################################################
 print ("--------------------------------------------------------")
-print ("dolidoli92 API로 접속합니다.\n")
+print (" **** API로 접속합니다.\n")
 
 print ("접     속     시     간  : ",datetime.now().replace(microsecond=0))
 

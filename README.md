@@ -6,7 +6,7 @@ You can configurate 'outlier_percent'.<br />
 
 The Program implement Bollinger Bands(Refer to below Picture)
 
-
+![Execution_picture](./img/upbit_example.png.)
 
 ***
 ## Details on Program

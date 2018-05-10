@@ -4,7 +4,7 @@ Detect the outlier in Bollinger bands(7period, 2sigma)
 
 You can configurate 'outlier_percent'
 
-** 
+***
 ## Details on Program
 
 1. Select the currencies except listed in 2 weeks 
@@ -39,4 +39,4 @@ and contents are saved in .csv file
 ## Execution Picture
 ***
 
-![Alt text]((18.05.08) Outlier_Detection(60).png)
+![Alt text](./(18.05.08) Outlier_Detection(60).png)

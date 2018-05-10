@@ -3,9 +3,6 @@ import secondaryindex
 from client import Client
 import exceptions
 import requests
-import sqlite3
-import pandas as pd
-import time
 import csv
 
 # API Key & Secret number / dolidoli92 API

@@ -8,17 +8,17 @@ You can configurate 'outlier_percent'
 ## Details on Program
 
 1. Select the currencies except listed in 2 weeks 
-  - Because it is so dangerous to catch a fluctuation
+  - Because it is so dangerous to catch a fluctuation<br />
  
 2. Can configurate the Outlier percetage
-  - i.e. 0%, input : 0.005%(real : 0.5%) ...
+  - i.e. 0%, input : 0.005%(real : 0.5%) ...<br />
 
 3. If there are outliers, save the data to csv file
   - Outlier is found by 1h*7
   - From now, call the data in 7 hours, for example,
     now : 15:28
     data : 9:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:28
-  - Therefore, it is not exact 7 hours but about 7 hours
+  - Therefore, it is not exact 7 hours but about 7 hours<br />
 
 
 ***
@@ -39,4 +39,4 @@ and contents are saved in .csv file
 ## Execution Picture
 ***
 
-![Alt text](./(18.05.08) Outlier_Detection(60).png)
+![Execution_picture](./(18.05.08) Outlier_Detection(60).png)

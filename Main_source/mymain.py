@@ -18,6 +18,8 @@ my_binance = Client('NArFy5c2NYFW53j2PRprY0Di5yD7txbC5uqXNfS1EBMAlx0wBt0pmgmTS2Y
 #          PART1. 프로그램 시작 준비(프로그램 설정/데이터 정리를 위해 기본데이터 수집)                 #
 #################################################################################################
 print ("--------------------------------------------------------")
+print ("dolidoli92 API로 접속합니다.\n")
+
 print ("접     속     시     간  : ",datetime.now().replace(microsecond=0))
 
 all_currencies_count = len(my_binance.get_products()['data']) # 전체 상장 갯수
@@ -76,36 +78,36 @@ print ("Trading에 활용할 종목들을 선택합니다. 선택은 20초 소�
 for i in range(0, currencies_btc_market_count):
     tmp_hour1_data = my_binance.get_klines(symbol=currencies_btc_market[i],
                                            interval=my_binance.KLINE_INTERVAL_1HOUR,
-                                           limit=15)
+                                           limit=336)
 
-    if len(tmp_hour1_data) >= 15:
+    if len(tmp_hour1_data) >= 336:
         currencies_btc_market_TRDING.append(currencies_btc_market[i])
 
 # ETH 시장 trading 가능한 종목 추출
 for i in range(0, currencies_eth_market_count):
     tmp_hour1_data = my_binance.get_klines(symbol=currencies_eth_market[i],
                                            interval=my_binance.KLINE_INTERVAL_1HOUR,
-                                           limit=15)
+                                           limit=336)
 
-    if len(tmp_hour1_data) >= 15:
+    if len(tmp_hour1_data) >= 336:
         currencies_eth_market_TRDING.append(currencies_eth_market[i])
 
 # BNB 시장 trading 가능한 종목 추출
 for i in range(0, currencies_bnb_market_count):
     tmp_hour1_data = my_binance.get_klines(symbol=currencies_bnb_market[i],
                                            interval=my_binance.KLINE_INTERVAL_1HOUR,
-                                           limit=15)
+                                           limit=336)
 
-    if len(tmp_hour1_data) >= 15:
+    if len(tmp_hour1_data) >= 336:
         currencies_bnb_market_TRDING.append(currencies_bnb_market[i])
 
 # USDT 시장 trading 가능한 종목 추출
 for i in range(0, currencies_usdt_market_count):
     tmp_hour1_data = my_binance.get_klines(symbol=currencies_usdt_market[i],
                                            interval=my_binance.KLINE_INTERVAL_1HOUR,
-                                           limit=15)
+                                           limit=336)
 
-    if len(tmp_hour1_data) >= 15:
+    if len(tmp_hour1_data) >= 336:
         currencies_usdt_market_TRDING.append(currencies_usdt_market[i])
 
 
@@ -326,7 +328,7 @@ while True:
 
 
 
-                        with open("H:\\[4] Binance_database\\analysis\\180506.csv", 'a',encoding='utf-8',newline='') as program_log:
+                        with open("H:\\[4] Binance_database\\analysis\\180509-.csv", 'a',encoding='utf-8',newline='') as program_log:
                             program_log_csv = csv.writer(program_log)
                             program_log_csv.writerow(["outlier percent","{0:.3f}".format(lower_percent_hour1 * 100)+"%",
                                                       currencies_btc_market_TRDING[i],"BuySignal","Time",
@@ -341,47 +343,6 @@ while True:
 
         except exceptions.BinanceAPIException as e:
             print(e)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

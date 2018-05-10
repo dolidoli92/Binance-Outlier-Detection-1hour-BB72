@@ -4,7 +4,9 @@ Detect the outlier in Bollinger bands(7period, 2sigma) in every second.<br />
 
 You can configurate 'outlier_percent'.<br />
 
-The Program implement Bollinger Bands(Refer to below Picture)
+The Program implement Bollinger Bands(Refer to below Picture)<br />
+
+(Lower line, Upper line, Current price, How break away from lower/upper line(Calculate %))<br />
 
 ![Bollinger_bands](./img/upbit_example.png)
 

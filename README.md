@@ -4,8 +4,17 @@ Detect the outlier in Bollinger bands(7period, 2sigma)
 
 You can configurate 'outlier_percent'
 
-***
+** 
+## Details on Program
 
+1. Select the currencies except listed in 2 weeks 
+  - It is so dangerous to catch a fluctuation
+
+
+
+
+***
+## Execution Result(print)
 If the price is broken away, the program catch the outlier and print the status like below
 
 i) There is no Outlier
@@ -19,7 +28,7 @@ ii) There is a Outlier or many Outliers
 and contents are saved in .csv file
 
 ***
-## 실행 사진
+## Execution Picture
 ***
 
 ![Alt text]((18.05.08) Outlier_Detection(60).png)

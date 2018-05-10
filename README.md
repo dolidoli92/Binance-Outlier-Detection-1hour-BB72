@@ -1,6 +1,6 @@
 # Binance-Outlier-Detection Outline
 
-Detect the outlier in Bollinger bands(7period, 2sigma) in every second.<br />
+Detect the outlier in Bollinger bands(7period, 2sigma) in every second at 1hour chart.<br />
 
 You can configurate 'outlier_percent'.<br />
 

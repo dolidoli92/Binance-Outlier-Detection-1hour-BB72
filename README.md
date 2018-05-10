@@ -39,4 +39,4 @@ and contents are saved in .csv file
 ## Execution Picture
 ***
 
-![Execution_picture](./(18.05.08) Outlier_Detection(60).png)
+![Execution_picture]((18.05.08) Outlier_Detection(60).png)

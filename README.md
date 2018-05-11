@@ -2,6 +2,22 @@
 
 Detect the outlier in Bollinger bands(7period, 2sigma) in every second at 1hour chart.<br />
 
+7hours(Because 7 period) time is estimated by using before exact 7 hours(★★★).<br />
+
+i.e.<br />
+
+now : 2018.05.11 11:32 <br />
+
+7hours : <br />
+2018.05.11 11:00 - 2018.05.11 11:32 : 1hour<br />
+2018.05.11 10:00 - 2018.05.11 11:00 : 1hour<br />
+2018.05.11 09:00 - 2018.05.11 10:00 : 1hour<br />
+2018.05.11 08:00 - 2018.05.11 09:00 : 1hour<br />
+2018.05.11 07:00 - 2018.05.11 08:00 : 1hour<br />
+2018.05.11 06:00 - 2018.05.11 07:00 : 1hour<br />
+2018.05.11 05:00 - 2018.05.11 06:00 : 1hour<br /><br /><br />
+
+
 You can configurate 'outlier_percent'.<br />
 
 The Program implement Bollinger Bands(Refer to below Picture)<br />

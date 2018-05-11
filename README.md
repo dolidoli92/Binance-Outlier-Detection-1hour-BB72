@@ -17,6 +17,20 @@ now : 2018.05.11 11:32 <br />
 2018.05.11 06:00 - 2018.05.11 07:00 : 1hour<br />
 2018.05.11 05:00 - 2018.05.11 06:00 : 1hour<br /><br /><br />
 
+If you want to get below data(Exact 7 hours), visit https://github.com/dolidoli92/Binance-Outlier-Detection-1min-BB72
+
+now : 2018.05.11 11:32 <br />
+
+7hours : <br />
+2018.05.11 10:32 - 2018.05.11 11:32 : 1hour<br />
+2018.05.11 09:32 - 2018.05.11 10:32 : 1hour<br />
+2018.05.11 08:32 - 2018.05.11 09:32 : 1hour<br />
+2018.05.11 07:32 - 2018.05.11 08:32 : 1hour<br />
+2018.05.11 06:32 - 2018.05.11 07:32 : 1hour<br />
+2018.05.11 05:32 - 2018.05.11 06:32 : 1hour<br />
+2018.05.11 04:32 - 2018.05.11 07:32 : 1hour<br />
+
+***
 
 You can configurate 'outlier_percent'.<br />
 

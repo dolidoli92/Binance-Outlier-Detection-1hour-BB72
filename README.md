@@ -2,7 +2,7 @@
 
 Detect the outlier in Bollinger bands(7period, 2sigma) in every second at 1hour chart.<br />
 
-7hours(Because 7 period) time is estimated by using before exact 7 hours(★★★).<br />
+7hours(Because 7 period) time is estimated by using before approximate 7 hours(★★★).<br />
 
 i.e.<br />
 

@@ -6,8 +6,8 @@ import requests
 import csv
 
 # API Key & Secret number
-my_binance = Client('API KEY',
-                    'API SECURE',
+my_binance = Client('NArFy5c2NYFW53j2PRprY0Di5yD7txbC5uqXNfS1EBMAlx0wBt0pmgmTS2YHelsD',
+                    '3SkFX4pRDMjxml9YDWUuILLDZe9BlAzfpbfl4zbGgt7HgB6VHG9rRcEMW1Nr4S4U',
                     {"verify": True, "timeout": 20})
 
 

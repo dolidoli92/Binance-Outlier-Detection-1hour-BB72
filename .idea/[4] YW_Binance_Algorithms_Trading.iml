@@ -6,11 +6,12 @@
       <sourceFolder url="file://$MODULE_DIR$/binance" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/MyBinanaceVens" />
       <excludeFolder url="file://$MODULE_DIR$/MyBinanaceVens1" />
+      <excludeFolder url="file://$MODULE_DIR$/MyBinanaceVensBB" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv2" />
       <excludeFolder url="file://$MODULE_DIR$/venv3" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6 (MyBinanaceVens)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (MyBinanaceVensBB) (1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
